@@ -1,26 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import logo from "../Images/cafelogo.svg";
-import Login from "./Login";
-import Registor from "./Registor";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showSignIn, setShowSignIn] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
 
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleSignInClose = () => setShowSignIn(false);
-  const handleSignUpClose = () => setShowSignUp(false);
-
   return (
-    <>
     <nav className="navbar navbar-expand-md navbar-light bg-light w-100">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <a className="navbar-brand" href="/">
           <img
             src={logo}
             alt="Myrash"
@@ -31,7 +22,7 @@ function Navbar() {
               position: "relative",
             }}
           />
-        </Link>
+        </a>
         <button
           onClick={handleToggle}
           className="navbar-toggler"
@@ -52,52 +43,51 @@ function Navbar() {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
+              <a className="nav-link active" aria-current="page" href="/">
                 Home
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/products">
+              <a className="nav-link" href="/">
                 Products
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/aboutus">
+              <a className="nav-link" href="/">
                 About Us
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contactus">
+              <a className="nav-link" href="/">
                 Contact Us
-              </Link>
+              </a>
             </li>
           </ul>
           <form className="d-flex flex-column flex-sm-row justify-content-sm-end mt-2 mt-sm-0">
-          <button
-                className="btn btn-outline-secondary mb-2 mb-sm-0 mx-sm-2"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowSignIn(true)
-                }}
-              >
-                Sign-In
-              </button>
-              <button
-                className="btn btn-outline-secondary mb-2 mb-sm-0 mx-sm-2"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowSignUp(true)
-                }}
-              >
-                Sign-Up
-              </button>
+            <button
+              className="btn btn-outline-secondary mb-2 mb-sm-0 mx-sm-2"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              Sign-In
+            </button>
+            <button
+              className="btn btn-outline-secondary mb-2 mb-sm-0 mx-sm-2"
+              data-bs-toggle="modal"
+              data-bs-target="#registorModal"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+            >
+              Sign-Up
+            </button>
           </form>
         </div>
       </div>
     </nav>
-    <Login show={showSignIn} handleClose={handleSignInClose} />
-      <Registor show={showSignUp} handleClose={handleSignUpClose} />
-    </>
   );
 }
 

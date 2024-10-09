@@ -1,0 +1,15 @@
+.carousel-inner {
+  height: 100vh; /* Set a fixed height for the carousel items */
+}
+
+.carousel-item img {
+  width: 100%; /* Make images full width */
+  height: 100%; /* Set height to fill the carousel item */
+  object-fit: cover; /* Cover the entire area while preserving aspect ratio */
+}
+
+@media (max-width: 768px) {
+  .carousel-inner {
+    height: 80vh; /* Adjust height for smaller screens */
+  }
+}

@@ -1,0 +1,372 @@
+{
+    "products": [
+        {
+            "_id": 1,
+            "name": "Americano",
+            "price": 99,
+            "description": "What is an Americano? This smooth yet bold espresso-based beverage is a drink with a rich history and unique flavor profile. It offers a unique experience for coffee-lovers and bridges the gap between drip coffee and espresso. In this article, we will delve into what the Americano coffee beverage is and how it differs from other coffee beverages. Learn about the Americano’s origin, the nuances of its flavor and how to prepare it. What is an Americano’s appeal? How is it prepared at home? This article contains some interesting tidbits of information. It might even entice you to try creating this popular coffee sensation at home.",
+            "image": "/imgs/Americano.jpeg",
+            "category": "coffee"
+        },
+        {
+            "_id": 2,
+            "name": "Macchiato",
+            "price": 89,
+            "description": "A hot macchiato is a coffee drink made with espresso and a small amount of steamed or foamed milk. The word 'macchiato' is Italian for 'stained' or 'marked', which refers to the way the milk is added to the espresso.",
+            "image": "/imgs/macchiato.jpeg",
+            "category": "coffee"
+        },
+        {
+            "_id": 3,
+            "name": "Hot Chocolate ",
+            "price": 99,
+            "description": "Whip up a batch of decadent hot chocolate that's been energized with a blast of coffee for those chilly winter days. There's nothing like a steaming mug of hot chocolate on a cold winter day to make you feel extra cozy.",
+            "image": "/imgs/hotchocolate.jpeg",
+            "category": "coffee"
+        },
+        {
+            "_id": 4,
+            "name": "Filter Coffee",
+            "price": 105,
+            "description": "A tasty South Indian filter coffee recipe that will have you coming back for more! Add hot milk to this coffee and serve it with tiffin breakfast items like upma, idli, dosa, uttapam or medu vada. Make in just 15 minutes!",
+            "image": "/imgs/Filtercoffee.jpeg",
+            "category": "coffee"
+        },
+        {
+            "_id": 5,
+            "name": "Cappuccino",
+            "price": 110,
+            "description": "It has antioxidant properties that help to prevent skin problems and memory loss. The intake of the coffee or tea without sugar or milk also assists in weight loss. Most of the people drink black coffee or tea to prevent fattening. Cappuccino also lowers the chances of cardiovascular ailments.",
+            "image": "/imgs/Cappuccino.jpeg",
+            "category": "coffee"
+        },
+        {
+            "_id": 6,
+            "name": "Iced coffee ",
+            "price": 149,
+            "description": "Iced coffee is a coffee beverage served cold. It may be prepared either by brewing coffee normally and then serving it over ice or in cold milk or by brewing the coffee cold. In hot brewing, sweeteners and flavoring may be added before cooling, as they dissolve faster.",
+            "image": "/imgs/Iced coffee.jpeg",
+            "category": "coffee"
+        },
+        {
+            "_id": 7,
+            "name": "Irish coffee",
+            "price": 159,
+            "description": "Irish coffee is a drink that combines Irish whiskey, coffee, and cream. The amount of whiskey and sugar used, as well as the addition of Irish cream, can differentiate an Irish coffee from an Irish cream coffee. The drink's origins date back to before Prohibition.",
+            "image": "/imgs/Irish coffee.jpeg",
+            "category": "coffee"
+        },
+        {
+            "_id": 8,
+            "name": "Coffee Milkshake",
+            "price": 129,
+            "description": "This coffee milkshake is all your sweet coffee dreams come true. It’s thick and creamy with a rich coffee and chocolate flavor. Best of all, if you have some leftover coffee from this morning and some vanilla ice cream in your freezer, you could be sipping a coffee shake in about 5 minutes.",
+            "image": "/imgs/coffee milkshake.jpeg",
+            "category": "coffee"
+        },
+        {
+            "_id": 9,
+            "name": " Masala tea",
+            "price": 59,
+            "description": "Chai is Indian tea. As milk tea is widespread in India, the phrase has become synonymous with it. Masala tea is Indian spiced milk tea with cinnamon, cardamom, and cloves with black tea and milk.",
+            "image": "/imgs/Masala tea.jpeg",
+            "category": "Tea"
+        },
+        {
+            "_id": 10,
+            "name": "Green tea",
+            "price": 79,
+            "description": "People have hailed the health benefits of green tea for centuries. Studies suggest that consuming green tea may positively affect skin health, help with weight loss, and reduce the risk of cardiovascular disease, among other benefits.",
+            "image": "/imgs/green tea.jpeg",
+            "category": "Tea"
+        },
+        {
+            "_id": 11,
+            "name": "Black tea",
+            "price": 79,
+            "description": "Black tea is rich in antioxidants and may provide health benefits, including improved heart and gut health and a reduced risk for certain diseases.",
+            "image": "/imgs/Black tea.jpeg",
+            "category": "Tea"
+        },
+        {
+            "_id": 12,
+            "name": "Hibiscus",
+            "price": 99,
+            "description": "Hibiscus is high in antioxidants and offers many potential benefits. In particular, it may help promote weight loss, reduce the growth of bacteria and cancer cells, and support the health of the heart and liver.",
+            "image": "/imgs/Hibiscus.jpeg",
+            "category": "Tea"
+        },
+        {
+            "_id": 13,
+            "name": "Peppermint tea",
+            "price": 109,
+            "description": "Peppermint tea is naturally sweet and free of caffeine. It may be linked to health benefits, including improving digestion, boosting focus, and relieving migraine.",
+            "image": "/imgs/Peppermint tea.jpeg",
+            "category": "Tea"
+        },
+        {
+            "_id": 14,
+            "name": "Blueberry Mojito",
+            "price": 89,
+            "description": "Capture the taste of summer in a fresh blueberry mojito cocktail. Easy to make from scratch, it's a spectacular twist on the original mojito with blueberries adding their sweet juiciness to the refreshing combination of lime, mint, and rum. They also give this simple rum drink a beautiful purplish-blue color that makes it even more irresistible.",
+            "image": "/imgs/Blueberry Mojito.jpeg",
+            "category": "mojito"
+        },
+        {
+            "_id": 15,
+            "name": "Limeade Mojito",
+            "price": 89,
+            "description": "Mojito is a traditional Cuban punch. The cocktail often consists of five ingredients: white rum, sugar, lime juice, soda water, and mint. Its combination of sweetness, citrus, and herbaceous mint flavors is intended to complement the rum, and has made the mojito a popular summer drink",
+            "image": "/imgs/Limeade Mojito.jpeg",
+            "category": "mojito"
+        },
+        {
+            "_id": 16,
+            "name": "Coconut Lime Mojito",
+            "price": 99,
+            "description": "Getting tropical with this fun and easy Creamy Coconut Lime Mojito. White and coconut rum mixed with plenty of fresh lime and mint. This mojito is made creamy with coconut cream and topped off with ginger beer for a fizzy, gingery kick. It’s creamy and refreshing…the perfect tropical mojito. A sweet lime sugar-rimmed glass really seals the deal and keeps everyone coming back for seconds.",
+            "image": "/imgs/Coconut Lime Mojito.jpeg",
+            "category": "mojito"
+        },
+        {
+            "_id": 17,
+            "name": "Apple Mojito",
+            "price": 89,
+            "description": "apple mojito is a combination of a few different seasons. You get the fall flavored apple cider mixed with the bright lime/mint flavors of a classic mojito.",
+            "image": "/imgs/Apple Mojito.jpeg",
+            "category": "mojito"
+        },
+        {
+            "_id": 18,
+            "name": "Blue Mojito",
+            "price": 89,
+            "description": "The blue mojito is a refreshing, mint and brilliantly blue cocktail. If you are looking for a party drink, this one might be for you!",
+            "image": "/imgs/Blue Mojito.jpeg",
+            "category": "mojito"
+        },
+        {
+            "_id": 19,
+            "name": "strawberry smoothie",
+            "price": 109,
+            "description": "A strawberry smoothie is a great source of protein, fibre, vitamins and minerals, and it helps with hydration.",
+            "image": "/imgs/strawberry smoothie.jpeg",
+            "category": "Smoothie"
+        },
+        {
+            "_id": 20,
+            "name": "kiwi smoothies ",
+            "price": 119,
+            "description": "Sweet and tangy, and quick and easy to make, kiwi smoothies are a healthy treat everyone will love.",
+            "image": "/imgs/kiwi smoothies.jpeg",
+            "category": "Smoothie"
+        },
+        {
+            "_id": 21,
+            "name": "mango smoothies",
+            "price": 119,
+            "description": "Fiber helps promote regularity, prevent constipation, and support the growth of beneficial gut bacteria. Incorporating mango smoothies into your diet can help ensure that you meet your daily fiber requirements and keep your digestive system running smoothly.",
+            "image": "/imgs/mango smoothies.jpeg",
+            "category": "Smoothie"
+        },
+        {
+            "_id": 22,
+            "name": "Chocolate Milkshake",
+            "price": 159,
+            "description": "Cold Coco – An Indian Chocolate Milkshake is a type of chocolate  milkshake  sold during the month of summer in India. Served semi chilled , this drink brings respite from scorching heat.",
+            "image": "/imgs/Chocolate Milkshake.jpeg",
+            "category": "Milkshake"
+        },
+        {
+            "_id": 23,
+            "name": "Doughnut",
+            "price": 499,
+            "description": "doughnut, a small ring of sweet leavened dough that has been fried or sometimes baked. The term doughnut may also be used more broadly to refer to foods such as long johns, pączki, bear claws, crullers, and others that resemble doughnuts in form or composition—i.e., are either ring-shaped or composed of fried dough or both.",
+            "image": "/imgs/doughnut.jpeg",
+            "category": "Dessert"
+        },
+        {
+            "_id": 24,
+            "name": "Molten chocolate cake",
+            "price": 99,
+            "description": "Molten chocolate cake or runny core cake, is a French dessert that consists of a chocolate cake with a liquid chocolate core. It is named for that molten center, and it is also known as mi-cuit au chocolat, chocolat coulant, chocolate lava cake, or simply lava cake.",
+            "image": "/imgs/Molten chocolate cake.jpeg",
+            "category": "Dessert"
+        },
+        {
+            "_id": 25,
+            "name": "salt Fries",
+            "price": 99,
+            "description": "Covering in water helps the potato from turning a dark color. Adding salt to the water to form a brine mixture may seem helpful and can impart a flavor to the potato strips, however, salt is a major contributor to the fry oil breaking down prematurely, so I don't recommend it.",
+            "image": "/imgs/salt Fries.jpeg",
+            "category": "fries"
+        },
+        {
+            "_id": 26,
+            "name": "Peri Peri Fries",
+            "price": 159,
+            "description": "For the Peri Peri Fries In a bowl, combine the paprika, ground ginger, ground cardamom, granulated garlic, granulated onion, cayenne pepper and salt. Fry the french fries according to package directions and then drain. Toss the hot fries with the honey, sesame seeds and spice mix.",
+            "image": "/imgs/Peri Peri Fries.jpeg",
+            "category": "fries"
+        },
+        {
+            "_id": 27,
+            "name": " veggie burger",
+            "price": 129,
+            "description": "A veggie burger is a hamburger made with a patty that does not contain meat, or the patty of such a hamburger. The patty may be made from ingredients like beans, nuts, grains, seeds, or fungi such as mushrooms or mycoprotein.",
+            "image": "/imgs/veggie burger.jpeg",
+            "category": "Burger"
+        },
+        {
+            "_id": 28,
+            "name": "Black bean burger",
+            "price": 159,
+            "description": "Beans, for instance, are a good source of both zinc and iron. They are also an important protein resource. Black bean burgers are never going to be mistaken for hamburgers, but they are typically a solid choice when it comes to health",
+            "image": "/imgs/Black bean burger.jpeg",
+            "category": "Burger"
+        },
+        {
+            "_id": 29,
+            "name": "hamburger",
+            "price": 169,
+            "description": "A hamburger, or simply a burger, is a dish consisting of fillings—usually a patty of ground meat, typically beef—placed inside a sliced bun or bread roll. The patties are often served with cheese, lettuce, tomato, onion, pickles, bacon, or chilis with condiments such as ketchup, mustard, mayonnaise, relish or a 'special sauce', often a variation of Thousand Island dressing, and are frequently placed on sesame seed buns. A hamburger patty topped with cheese is called a cheeseburger.[1] Under some definitions, and in some cultures, a burger is considered a sandwich.",
+            "image": "/imgs/hamburger.jpeg",
+            "category": "Burger"
+        },
+        {
+            "_id": 30,
+            "name": "cheeseburger",
+            "price": 199,
+            "description": "A cheeseburger is a hamburger with a slice of melted cheese on top of the meat patty, added near the end of the cooking time. Cheeseburgers can include variations in structure, ingredients and composition. As with other hamburgers, a cheeseburger may include various condiments and other toppings such as lettuce, tomato, onion, pickles, bacon, avocado, mushrooms, mayonnaise, ketchup, and mustard.",
+            "image": "/imgs/cheeseburger.jpeg",
+            "category": "Burger"
+        },
+        {
+            "_id": 31,
+            "name": "Rice Burger",
+            "price": 219,
+            "description": "This Japanese Rice Burger recipe puts a fun twist on the classic burger by swapping out the bun for sticky rice patties. These patties are then filled with juicy beef patties, crispy lettuce, and a savory sauce for an unforgettable flavor explosion in every bite!",
+            "image": "/imgs/Rice Burger.jpeg",
+            "category": "Burger"
+        },
+        {
+            "_id": 32,
+            "name": "slugburger",
+            "price": 179,
+            "description": "A slugburger (originally Weeksburger) is a traditional Southern food found in the area of Northeast Mississippi, particularly Corinth, New Albany, Booneville, Iuka, Tishomingo, Burnsville, West Tennessee, and north Alabama, particularly Decatur, Hartselle, Athens, Moulton, and Cullman. Consisting of a patty made from a mixture of beef or pork and an inexpensive meat extender such as soybeans, it is deep fried in oil. It is typically served on a bun with mustard, pickles, onion, and in some places with a side of French fries or onion rings.",
+            "image": "/imgs/slugburger.jpeg",
+            "category": "Burger"
+        },
+        {
+            "_id": 33,
+            "name": "great chili burger",
+            "price": 189,
+            "description": "The key to a great chili burger is a flavorful chili with just the right consistency. Too runny and it will slide right off of your burger. Too thick and it’s basically just like eating a double cheeseburger.",
+            "image": "/imgs/great chili burger.jpeg",
+            "category": "Burger"
+        },
+        {
+            "_id": 34,
+            "name": "Ramen burger",
+            "price": 259,
+            "description": "Ramen is a Japanese noodle dish. It consists of Chinese-style wheat noodles served in a broth; common flavors are soy sauce and miso, with typical toppings including sliced pork, nori, menma, and scallions. Ramen has its roots in Chinese noodle dishes and is a part of Japanese Chinese cuisine. Nearly every region in Japan has its own variation of ramen, such as the tonkotsu ramen of Kyushu and the miso ramen of Hokkaido.",
+            "image": "/imgs/Ramen burger.jpeg",
+            "category": "Burger"
+        },
+        {
+            "_id": 35,
+            "name": "Margherita pizza",
+            "price": 199,
+            "description": "Margherita pizza dough is made with flour, salt, and yeast and topped with fresh basil, tomatoes, olive oil, sea salt, garlic, and mozzarella. The tomatoes are sliced and put onto the dough, followed by the garlic and basil, and then rounds of sliced mozzarella.",
+            "image": "/imgs/Margherita pizza.jpeg",
+            "category": "Pizza"
+        },
+        {
+            "_id": 36,
+            "name": "Paneer Tikka Pizza",
+            "price": 259,
+            "description": "Paneer Tikka Pizza. Paneer Tikka Pizza is a delightful fusion of Italian and Indian flavors, making it one of the most beloved pizza types in India. This pizza seamlessly marries the creamy richness of paneer (Indian cottage cheese) with the smoky, spiced essence of traditional tikka.",
+            "image": "/imgs/Paneer Tikka Pizza.jpeg",
+            "category": "Pizza"
+        },
+        {
+            "_id": 37,
+            "name": "pepperoni pizza",
+            "price": 219,
+            "description": "There’s a reason this is one of the most popular types of pizza. Who doesn’t love biting into a crispy, salty round of pepperoni?",
+            "image": "/imgs/pepperoni pizza.jpeg",
+            "category": "Pizza"
+        },
+        {
+            "_id": 38,
+            "name": "Meat Pizza",
+            "price": 229,
+            "description": "If pepperoni just isn’t enough, and you’re looking for a pie with a bit more heft, a meat pizza is a perfect and popular choice. Pile on ground beef and sausage for a hearty meal.",
+            "image": "/imgs/Meat Pizza.jpeg",
+            "category": "Pizza"
+        },
+        {
+            "_id": 39,
+            "name": "Kebab pizza",
+            "price": 269,
+            "description": "Kebab pizza (Swedish: kebabpizza) is a Swedish style of pizza topped with kebab meat and other ingredients, the precise topping often varying between restaurants. A combination of Italian and Middle Eastern cuisines, the kebab pizza was created by Middle Eastern immigrants in the 1980s. Since its creation, the kebab pizza has increased in popularity and is today one of Sweden's most popular pizzas, and one of the most popular fast food dishes overall. Due to its popularity the dish has reached a position of cultural prominence in Sweden as well as all over Scandinavia, sometimes being invoked in popular culture and politics.",
+            "image": "/imgs/Kebab pizza.jpeg",
+            "category": "Pizza"
+        },
+        {
+            "_id": 40,
+            "name": "Roman pizza",
+            "price": 299,
+            "description": "Roman pizza (Italian: pizza romana) is a style of pizza originating in Rome, but now widespread, especially in central Italy.[1]Unlike Neapolitan pizza, which is recognised under the European Union's traditional speciality guaranteed scheme and by UNESCO as an intangible cultural heritage,[2] there is currently no equivalent recognition for Roman style pizza, and correspondingly no officially agreed upon definition.",
+            "image": "/imgs/Roman pizza.jpeg",
+            "category": "Pizza"
+        },
+        {
+            "_id": 41,
+            "name": "Pizza Napoletana Salsicca",
+            "price": 249,
+            "description": "Neapolitan pizza is a style of pizza made with tomatoes and mozzarella cheese. The tomatoes must be either San Marzano tomatoes or pomodorini del Piennolo del Vesuvio, which grow on the volcanic plains to the south of Mount Vesuvius. The cheese must be mozzarella di bufala campana, a protected designation of origin cheese made with the milk from water buffalo raised in the marshlands of Campania and Lazio in a semi-wild state, or fior di latte, a cow's milk mozzarella created according to the procedure for which it was registered as a traditional speciality guaranteed. Pizza napoletana is a TSG product in the European Union and the United Kingdom, and the art of its making is included on UNESCO's list of intangible cultural heritage.",
+            "image": "/imgs/Pizza Napoletana Salsicca.jpeg",
+            "category": "Pizza"
+        },
+        {
+            "_id": 42,
+            "name": "Greek pizza",
+            "price": 269,
+            "description": "In the cuisine of the United States, Greek pizza is a style of pizza crust and preparation where the pizza is proofed and cooked in a metal pan rather than stretched to order and baked on the floor of the pizza oven. A shallow pan is used, unlike the deep pans used in Sicilian, Chicago, or Detroit-styled pizzas. Its crust is typically spongy, airy, and light, like focaccia but not as thick. The crust is also rather oily, due to the coating of oil applied to the pan during preparation.",
+            "image": "/imgs/Greek pizza.jpeg",
+            "category": "Pizza"
+        },
+        {
+            "_id": 43,
+            "name": "Vegetarian Sandwich",
+            "price": 159,
+            "description": "Breakfast, lunch, dinner or midnight snack, our best vegetarian sandwich recipes and ideas are all here and waiting to be made by you!",
+            "image": "/imgs/Vegetarian Sandwich.jpeg",
+            "category": "Sandwich"
+        },
+        {
+            "_id": 44,
+            "name": "Grilled Sandwich",
+            "price": 199,
+            "description": "A sandwich is a dish typically consisting of meat, cheese or vegetables used as a filling between slices of bread, or placed on a slice of bread, or more generally any dish in which bread serves as a container or wrapper for another food type. The sandwich began as a portable, convenient finger food in the Western world, though over time it has become prevalent worldwide",
+            "image": "/imgs/Grilled Sandwich.jpeg",
+            "category": "Sandwich"
+        },
+        {
+            "_id": 45,
+            "name": "cheese sandwich",
+            "price": 189,
+            "description": "A cheese sandwich is a sandwich made with cheese between slices of bread. Typically, semi-hard cheeses are used for the filling, such as Cheddar, Red Leicester, or Double Gloucester. A Guardian article described the cheese sandwich as a 'British lunchtime staple'.[1] Using a pie iron or frying pan can transform the cheese sandwich into a cheese toastie.",
+            "image": "/imgs/cheese sandwich.jpeg",
+            "category": "Sandwich"
+        },
+        {
+            "_id": 46,
+            "name": "hot dog",
+            "price": 149,
+            "description": "A hot dog is a dish consisting of a grilled, steamed, or boiled sausage served in the slit of a partially sliced bun. The term hot dog can refer to the sausage itself. The sausage used is a wiener or a frankfurter. The names of these sausages commonly refer to their assembled dish. Hot dog preparation and condiments vary worldwide. Common condiments include mustard, ketchup, relish, onions in tomato sauce, and cheese sauce. Other toppings include sauerkraut, diced onions, jalapeños, chili, grated cheese, coleslaw, bacon and olives. Hot dog variants include the corn dog and pigs in a blanket. The hot dog's cultural traditions include the Nathan's Hot Dog Eating Contest and the Oscar Mayer Wienermobile.",
+            "image": "/imgs/hot dog.jpeg",
+            "category": "hot dog"
+        }
+    ]
+}
