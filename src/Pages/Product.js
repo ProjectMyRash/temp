@@ -52,6 +52,7 @@ function Product() {
 
   return (
     <div className="container mt-3 mb-3">
+      {filteredProducts.length > 0 ? (
       <select
         className="form-select form-select-lg mb-3"
         aria-label="Select category"
@@ -63,7 +64,8 @@ function Product() {
             {category}
           </option>
         ))}
-      </select>
+      </select>):("")
+      }
 
       {/* Product Grid */}
       <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">

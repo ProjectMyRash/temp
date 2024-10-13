@@ -1,72 +1,90 @@
 import React, { useState } from "react";
+import axios from "axios";
+import "../CSS/modals.css";
 
-function Register({ show, handleClose }) {
+function Registor({ show, handleClose }) {
   const [formData, setFormData] = useState({
-    username: "",
-    password: "",
+    name: "",
     email: "",
-    dob: "",
-    gender: "option1",
-    age: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const [errors, setErrors] = useState({
-    username: false,
-    password: false,
+    name: false,
     email: false,
-    dob: false,
-    gender: false,
-    age: false,
+    password: false,
+    confirmPassword: false,
   });
 
   const [formValidated, setFormValidated] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
-    const { id, value, name } = e.target;
+    const { id, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name || id]: value,
+      [id]: value,
     }));
 
     setErrors((prevErrors) => ({
       ...prevErrors,
-      [name || id]: value.trim() === "",
+      [id]: value.trim() === "",
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const userValid = formData.username.trim() !== "";
-    const passwordValid = formData.password.trim() !== "";
+
+    const nameValid = formData.name.trim() !== "";
     const emailValid = formData.email.trim() !== "";
-    const dateValid = formData.dob.trim() !== "";
-    const ageValid = formData.age.trim() !== "";
+    const passwordValid = formData.password.trim() !== "";
+    const passwordsMatch = formData.password === formData.confirmPassword;
 
     setErrors({
-      username: !userValid,
-      password: !passwordValid,
+      name: !nameValid,
       email: !emailValid,
-      dob: !dateValid,
-      age: !ageValid,
+      password: !passwordValid,
+      confirmPassword: !passwordsMatch,
     });
 
     setFormValidated(true);
 
-    if (userValid && passwordValid && emailValid && dateValid && ageValid) {
-      alert("Form submitted successfully!");
-      handleClose(); // Close the modal on successful submission
+    if (!nameValid || !emailValid || !passwordValid || !passwordsMatch) {
+      setErrorMsg("Please fill in all fields correctly.");
+      return;
+    }
+
+    await handleRegister();
+  };
+
+  const handleRegister = async () => {
+    try {
+      await axios.post("/api/auth/register", {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      });
+
+      setErrorMsg("");
+      handleClose();
+    } catch (error) {
+      setErrorMsg(
+        error.response?.data?.message ||
+          "Registration failed! Please try again."
+      );
     }
   };
 
   return (
     <div
-      className={`modal fade ${show ? "show" : ""}`}
+      className={`modal bg-blur fade ${show ? "show" : ""}`}
       style={{ display: show ? "block" : "none" }}
     >
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">Sign-Up</h5>
+            <h5 className="modal-title">Register</h5>
             <button
               type="button"
               className="btn-close"
@@ -84,37 +102,18 @@ function Register({ show, handleClose }) {
               <div className="col-md-12 form-floating">
                 <input
                   type="text"
-                  className={`form-control ${
-                    errors.username ? "is-invalid" : ""
-                  } ${!errors.username && formData.username ? "is-valid" : ""}`}
-                  id="username"
-                  placeholder="Username"
-                  value={formData.username}
+                  className={`form-control ${errors.name ? "is-invalid" : ""} ${
+                    !errors.name && formData.name ? "is-valid" : ""
+                  }`}
+                  id="name"
+                  placeholder="Name"
+                  value={formData.name}
                   onChange={handleChange}
                   required
                 />
-                <label htmlFor="username">Username</label>
+                <label htmlFor="name">Name</label>
                 <div className="invalid-feedback">
-                  Please provide a valid username.
-                </div>
-              </div>
-
-              <div className="col-md-12 form-floating">
-                <input
-                  type="password"
-                  className={`form-control ${
-                    errors.password ? "is-invalid" : ""
-                  } ${!errors.password && formData.password ? "is-valid" : ""}`}
-                  id="password"
-                  placeholder="Password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
-                <label htmlFor="password">Password</label>
-
-                <div className="invalid-feedback">
-                  Please provide a valid password.
+                  Please provide a valid name.
                 </div>
               </div>
 
@@ -131,7 +130,6 @@ function Register({ show, handleClose }) {
                   required
                 />
                 <label htmlFor="email">Email</label>
-
                 <div className="invalid-feedback">
                   Please provide a valid email.
                 </div>
@@ -139,20 +137,43 @@ function Register({ show, handleClose }) {
 
               <div className="col-md-12 form-floating">
                 <input
-                  type="date"
-                  className={`form-control ${errors.date ? "is-invalid" : ""} ${
-                    !errors.date && formData.date ? "is-valid" : ""
-                  }`}
-                  id="dob"
-                  placeholder="Date of Birth"
-                  value={formData.date}
+                  type="password"
+                  className={`form-control ${
+                    errors.password ? "is-invalid" : ""
+                  } ${!errors.password && formData.password ? "is-valid" : ""}`}
+                  id="password"
+                  placeholder="Password"
+                  value={formData.password}
                   onChange={handleChange}
                   required
                 />
-                <label htmlFor="dob">Date of Birth</label>
-
+                <label htmlFor="password">Password</label>
                 <div className="invalid-feedback">
-                  Please provide a valid date.
+                  Please provide a valid password.
+                </div>
+              </div>
+
+              <div className="col-md-12 form-floating">
+                <input
+                  type="password"
+                  className={`form-control ${
+                    errors.confirmPassword ? "is-invalid" : ""
+                  } ${
+                    !errors.confirmPassword && formData.confirmPassword
+                      ? "is-valid"
+                      : ""
+                  }`}
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required
+                />
+                <label htmlFor="confirmPassword">Confirm Password</label>
+                <div className="invalid-feedback">
+                  {formData.password !== formData.confirmPassword
+                    ? "Passwords do not match"
+                    : "Please confirm your password"}
                 </div>
               </div>
 
@@ -183,8 +204,8 @@ function Register({ show, handleClose }) {
                     type="radio"
                     name="gender"
                     id="exampleRadios1"
-                    value="option1"
-                    checked={formData.gender === "option1"}
+                    value="Male"
+                    checked={formData.gender === "Male"}
                     onChange={handleChange}
                   />
                   <label className="form-check-label" htmlFor="exampleRadios1">
@@ -197,8 +218,8 @@ function Register({ show, handleClose }) {
                     type="radio"
                     name="gender"
                     id="exampleRadios2"
-                    value="option2"
-                    checked={formData.gender === "option2"}
+                    value="Female"
+                    checked={formData.gender === "Female"}
                     onChange={handleChange}
                   />
                   <label className="form-check-label" htmlFor="exampleRadios2">
@@ -209,6 +230,8 @@ function Register({ show, handleClose }) {
                   {errors.gender && "Please select a gender."}
                 </div>
               </div>
+
+              {errorMsg && <p className="text-danger">{errorMsg}</p>}
 
               <div className="modal-footer">
                 <button type="submit" className="btn btn-primary">
@@ -223,4 +246,4 @@ function Register({ show, handleClose }) {
   );
 }
 
-export default Register;
+export default Registor;

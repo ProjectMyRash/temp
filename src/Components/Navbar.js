@@ -1,23 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../Images/cafelogo.svg";
-import Login from "./Login";
-import Registor from "./Registor";
+import UserProfile from "./UserProfile";
 
-function Navbar() {
+function Navbar({ isLoggedIn, setIsLoggedIn, userName, setUserName }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showSignIn, setShowSignIn] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
 
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleSignInClose = () => setShowSignIn(false);
-  const handleSignUpClose = () => setShowSignUp(false);
-
   return (
-    <>
     <nav className="navbar navbar-expand-md navbar-light bg-light w-100">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
@@ -71,33 +64,19 @@ function Navbar() {
                 Contact Us
               </Link>
             </li>
+            {}
           </ul>
-          <form className="d-flex flex-column flex-sm-row justify-content-sm-end mt-2 mt-sm-0">
-          <button
-                className="btn btn-outline-secondary mb-2 mb-sm-0 mx-sm-2"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowSignIn(true)
-                }}
-              >
-                Sign-In
-              </button>
-              <button
-                className="btn btn-outline-secondary mb-2 mb-sm-0 mx-sm-2"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setShowSignUp(true)
-                }}
-              >
-                Sign-Up
-              </button>
-          </form>
+          <div className="d-flex flex-column flex-sm-row justify-content-sm-end mt-2 mt-sm-0">
+            <UserProfile 
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+            userName={userName}
+            setUserName={setUserName} 
+            />
+          </div>
         </div>
       </div>
     </nav>
-    <Login show={showSignIn} handleClose={handleSignInClose} />
-      <Registor show={showSignUp} handleClose={handleSignUpClose} />
-    </>
   );
 }
 
