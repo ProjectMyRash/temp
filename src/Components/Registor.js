@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../CSS/modals.css";
 
-function Registor({ show, handleClose }) {
+function Registor({ show, handleClose, setIsLoggedIn, setUserName  }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
+    dob: "",
+    gender: "",
   });
 
   const [errors, setErrors] = useState({
@@ -15,22 +17,33 @@ function Registor({ show, handleClose }) {
     email: false,
     password: false,
     confirmPassword: false,
+    dob: false,
+    gender: false,
   });
 
   const [formValidated, setFormValidated] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
+    const { id, value, type } = e.target;
+    console.log(id, value);
 
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      [id]: value.trim() === "",
-    }));
+    if (type === "radio") {
+      setFormData((prevData) => ({
+        ...prevData,
+        gender: value, // Update gender based on selected radio button
+      }));
+      console.log("Gender updated to: ", value);
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [id]: value,
+      }));
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [id]: value.trim() === "",
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -40,17 +53,28 @@ function Registor({ show, handleClose }) {
     const emailValid = formData.email.trim() !== "";
     const passwordValid = formData.password.trim() !== "";
     const passwordsMatch = formData.password === formData.confirmPassword;
+    const dobValid = formData.dob.trim() !== "";
+    const genderValid = formData.gender !== "";
 
     setErrors({
       name: !nameValid,
       email: !emailValid,
       password: !passwordValid,
       confirmPassword: !passwordsMatch,
+      dob: !dobValid,
+      gender: !genderValid,
     });
 
     setFormValidated(true);
 
-    if (!nameValid || !emailValid || !passwordValid || !passwordsMatch) {
+    if (
+      !nameValid ||
+      !emailValid ||
+      !passwordValid ||
+      !passwordsMatch ||
+      !dobValid ||
+      !genderValid
+    ) {
       setErrorMsg("Please fill in all fields correctly.");
       return;
     }
@@ -60,12 +84,20 @@ function Registor({ show, handleClose }) {
 
   const handleRegister = async () => {
     try {
-      await axios.post("/api/auth/register", {
+      const response =await axios.post("http://localhost:5000/api/users/", {
         name: formData.name,
         email: formData.email,
         password: formData.password,
+        dob: formData.dob,
+        gender: formData.gender,
       });
 
+      const { authtoken, user } = response.data;
+
+      setUserName(formData.name);
+      setIsLoggedIn(true); // Log the user in
+      localStorage.setItem("token", authtoken); // Store the received token
+      localStorage.setItem("user", user.name);
       setErrorMsg("");
       handleClose();
     } catch (error) {
@@ -99,6 +131,7 @@ function Registor({ show, handleClose }) {
               noValidate
               onSubmit={handleSubmit}
             >
+              {/* Username field */}
               <div className="col-md-12 form-floating">
                 <input
                   type="text"
@@ -107,7 +140,7 @@ function Registor({ show, handleClose }) {
                   }`}
                   id="name"
                   placeholder="Name"
-                  value={formData.name}
+                  value={formData.name || ""}
                   onChange={handleChange}
                   required
                 />
@@ -117,6 +150,7 @@ function Registor({ show, handleClose }) {
                 </div>
               </div>
 
+              {/* email field */}
               <div className="col-md-12 form-floating">
                 <input
                   type="email"
@@ -125,7 +159,7 @@ function Registor({ show, handleClose }) {
                   } ${!errors.email && formData.email ? "is-valid" : ""}`}
                   id="email"
                   placeholder="Email"
-                  value={formData.email}
+                  value={formData.email || ""}
                   onChange={handleChange}
                   required
                 />
@@ -135,6 +169,7 @@ function Registor({ show, handleClose }) {
                 </div>
               </div>
 
+              {/* password field */}
               <div className="col-md-12 form-floating">
                 <input
                   type="password"
@@ -143,7 +178,7 @@ function Registor({ show, handleClose }) {
                   } ${!errors.password && formData.password ? "is-valid" : ""}`}
                   id="password"
                   placeholder="Password"
-                  value={formData.password}
+                  value={formData.password || ""}
                   onChange={handleChange}
                   required
                 />
@@ -153,6 +188,7 @@ function Registor({ show, handleClose }) {
                 </div>
               </div>
 
+              {/* confirm password field */}
               <div className="col-md-12 form-floating">
                 <input
                   type="password"
@@ -165,7 +201,7 @@ function Registor({ show, handleClose }) {
                   }`}
                   id="confirmPassword"
                   placeholder="Confirm Password"
-                  value={formData.confirmPassword}
+                  value={formData.confirmPassword || ""}
                   onChange={handleChange}
                   required
                 />
@@ -177,6 +213,7 @@ function Registor({ show, handleClose }) {
                 </div>
               </div>
 
+              {/* date field */}
               <div className="col-md-12 form-floating">
                 <input
                   type="date"
@@ -196,6 +233,7 @@ function Registor({ show, handleClose }) {
                 </div>
               </div>
 
+              {/* gender field */}
               <div className="col-md-12">
                 <label className="form-label">Gender</label>
                 <div className="form-check">
@@ -203,12 +241,12 @@ function Registor({ show, handleClose }) {
                     className="form-check-input"
                     type="radio"
                     name="gender"
-                    id="exampleRadios1"
+                    id="genderMale"
                     value="Male"
                     checked={formData.gender === "Male"}
                     onChange={handleChange}
                   />
-                  <label className="form-check-label" htmlFor="exampleRadios1">
+                  <label className="form-check-label" htmlFor="genderMale">
                     Male
                   </label>
                 </div>
@@ -217,12 +255,12 @@ function Registor({ show, handleClose }) {
                     className="form-check-input"
                     type="radio"
                     name="gender"
-                    id="exampleRadios2"
+                    id="genderFemale"
                     value="Female"
                     checked={formData.gender === "Female"}
                     onChange={handleChange}
                   />
-                  <label className="form-check-label" htmlFor="exampleRadios2">
+                  <label className="form-check-label" htmlFor="genderFemale">
                     Female
                   </label>
                 </div>

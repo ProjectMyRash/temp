@@ -20,8 +20,8 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     const user = localStorage.getItem("user");
-  
-  if (token && user) {
+
+    if (token && user) {
       try {
         const parsedUser = JSON.parse(user);
         // Ensure parsedUser is an object with the expected structure
@@ -38,12 +38,15 @@ function App() {
       console.log("Token or user data not found in localStorage");
     }
   }, []);
-  
-  
 
   return (
     <>
-      <Navbar isLoggedIn={isLoggedIn} userName={userName} />
+      <Navbar
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+        userName={userName}
+        setUserName={setUserName}
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/admin" element={<AdminPanel />} />
@@ -52,8 +55,18 @@ function App() {
         <Route path="/products/payment" element={<ProductPayment />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/signin" element={<Login setIsLoggedIn={setIsLoggedIn} setUserName={setUserName} />} />
-        <Route path="/signup" element={<Registor setIsLoggedIn={setIsLoggedIn} setUserName={setUserName} />} />
+        <Route
+          path="/signin"
+          element={
+            <Login setIsLoggedIn={setIsLoggedIn} setUserName={setUserName} />
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <Registor setIsLoggedIn={setIsLoggedIn} setUserName={setUserName} />
+          }
+        />
       </Routes>
       <Footer />
     </>

@@ -111,19 +111,18 @@ function AdminPanel() {
   };
 
   return (
-    <div className="container mb-3">
-      {isAdmin && (
-        <>
-          <h3 className="bg-dark text-white text-center p-3" style={{ width: "100%" }}>
+    <>
+     <h3 className="bg-dark text-white text-center p-3" style={{ width: "100%" }}>
             Admin Page
           </h3>
+    <div className="container mb-3">
+      {isAdmin && (
           <button
             className="btn btn-outline-success mb-3"
             onClick={() => handleOpenModal()}
           >
             Add Product
           </button>
-        </>
       )}
       
       <select
@@ -166,6 +165,7 @@ function AdminPanel() {
         initialData={currentProduct}
       />
     </div>
+    </>
   );
 }
 

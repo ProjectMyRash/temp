@@ -1,11 +1,14 @@
-import React from "react";
+import React from 'react';
 
-const ContactUsHeader = () => {
-  return (
-    <h1 className="text-center mb-15 p-2 bg-dark text-light" style={{ border: "2px solid #000", borderRadius: "10px" }}>
-      <b>Contact Us</b>
-    </h1>
-  );
-};
+function ContactHeader() {
+    return (
+        <section className="bg-dark text-light text-center py-5">
+        <div className="container">
+          <h1 className="display-4"><b>Contact Us</b></h1>  
+          <p className="lead">Get in touch with us! We'd love to hear from you.</p>
+        </div>
+      </section>
+    );
+}
 
-export default ContactUsHeader
+export default ContactHeader;

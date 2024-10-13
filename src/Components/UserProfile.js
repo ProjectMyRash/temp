@@ -46,7 +46,7 @@ function UserProfile({ isLoggedIn, setIsLoggedIn, userName, setUserName }) {
         <div>
           <div className="d-flex align-items-center">
             <Avatar name={userName} size={40} round={true} className="mx-2" />
-            <button className="btn btn-outline-primary" onClick={handleLogout}>
+            <button className="btn btn-outline-primary mx-2" onClick={handleLogout}>
               Logout
             </button>
           </div>

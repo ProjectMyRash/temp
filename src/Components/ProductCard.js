@@ -21,17 +21,18 @@ function ProductCard({ product, onEdit, onDelete }) {
         <p className="card-text">₹{product.price}</p>
         <p className="card-text">{shortDescription}</p>
         {/* Ensure the Link goes to the correct path */}
-        <Link to={`/products/${product._id}`} className="btn btn-outline-primary">
+        {!onDelete &&
+          <Link to={`/products/${product._id}`} className="btn btn-outline-primary">
           Buy
-        </Link>
+        </Link>}
         {/* Render Edit and Delete buttons if onEdit and onDelete are provided */}
         {onEdit && (
-          <button className="btn btn-outline-warning ms-2" onClick={onEdit}>
+          <button className="btn btn-outline-warning ms-1" onClick={onEdit}>
             Edit
           </button>
         )}
         {onDelete && (
-          <button className="btn btn-outline-danger ms-2" onClick={onDelete}>
+          <button className="btn btn-outline-danger ms-1" onClick={onDelete}>
             Delete
           </button>
         )}
