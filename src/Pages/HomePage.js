@@ -6,7 +6,7 @@ import Offer1 from "../Images/Offer1.jpg";
 import Offer2 from "../Images/Offer2.jpg";
 import Offer3 from "../Images/Offer3.jpg";
 import sliderImg from "../Images/cafeImg.jpg";
-import reverseSliderImg from "../Images/cafeImg.jpg";
+import reverseSliderImg from "../Images/aboutUsImage2.jpg";
 
 function HomePage() {
   const imgSliderHeading = "Welcome to Myrash Cafe";

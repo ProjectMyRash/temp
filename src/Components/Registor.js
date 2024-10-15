@@ -100,6 +100,7 @@ function Registor({ show, handleClose, setIsLoggedIn, setUserName  }) {
       localStorage.setItem("user", user.name);
       setErrorMsg("");
       handleClose();
+      window.location="/";
     } catch (error) {
       setErrorMsg(
         error.response?.data?.message ||
